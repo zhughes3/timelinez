@@ -1,0 +1,102 @@
+.h-timeline {
+    white-space: nowrap;
+    overflow-x: hidden;
+}
+
+.h-timeline ol {
+    font-size: 0;
+    width: 100vw;
+    padding: 250px 0;
+    transition: all 1s;
+}
+
+.h-timeline ol li {
+    position: relative;
+    display: inline-block;
+    list-style-type: none;
+    width: 160px;
+    height: 3px;
+    background: #fff;
+}
+
+.h-timeline ol li:last-child {
+    width: 280px;
+}
+
+.h-timeline ol li:not(:first-child) {
+    margin-left: 14px;
+}
+
+.h-timeline ol li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 1px);
+    bottom: 0;
+    width: 12px;
+    height: 12px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: #F45B69;
+}
+
+.h-timeline ol li div {
+    position: absolute;
+    left: calc(100% + 7px);
+    width: 280px;
+    padding: 15px;
+    font-size: 1rem;
+    white-space: normal;
+    color: black;
+    background: white;
+}
+
+.h-timeline ol li div::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.h-timeline ol li:nth-child(odd) div {
+    top: -16px;
+    transform: translateY(-100%);
+}
+
+.h-timeline ol li:nth-child(odd) div::before {
+    top: 100%;
+    border-width: 8px 8px 0 0;
+    border-color: white transparent transparent transparent;
+}
+
+.h-timeline ol li:nth-child(even) div {
+    top: calc(100% + 16px);
+}
+
+.h-timeline ol li:nth-child(even) div::before {
+    top: -8px;
+    border-width: 8px 0 0 8px;
+    border-color: transparent transparent transparent white;
+
+}
+
+.h-timeline .h-arrows {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.h-timeline .h-arrows .h-arrow-prev {
+    margin-right: 20px;
+}
+
+.h-timeline .disabled {
+    opacity: .5;
+}
+
+.h-timeline .h-arrows button {
+    font-size: 20px;
+}
